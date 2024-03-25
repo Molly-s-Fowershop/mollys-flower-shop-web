@@ -1,7 +1,7 @@
 export default function FeaturedPage() {
   return (
-    <main>
+    <div>
       <h1>Featured</h1>
-    </main>
+    </div>
   );
 }

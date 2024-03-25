@@ -1,7 +1,7 @@
 export default function CategotiesPage() {
   return (
-    <main>
+    <div>
       <h1>Categories</h1>
-    </main>
+    </div>
   );
 }

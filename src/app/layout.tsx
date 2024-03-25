@@ -1,4 +1,3 @@
-import Container from "@/components/Container";
 import "./globals.css";
 import Header from "@/components/Header";
 import { Metadata } from "next";
@@ -18,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-col min-h-[100vh]">
         <Header />
-        <Container className="flex-1">{children}</Container>
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>
