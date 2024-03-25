@@ -18,11 +18,11 @@ export default function NavigationLink({
   const activeClass = path === href ? "border-black" : "";
 
   return (
-    <li>
+    <li className="inline-flex">
       <Link
         href={href}
         className={cn(
-          "px-2 py-1 border border-transparent rounded-md text-xs",
+          "px-2 py-1 border border-transparent rounded-md text-sm transition-colors duration-300",
           activeClass,
           linkClassName
         )}
