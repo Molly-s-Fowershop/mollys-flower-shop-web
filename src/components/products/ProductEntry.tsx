@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Product } from "@/types/Product";
-import { CartPlus, Heart } from "iconoir-react";
 
 type ProductEntryProps = {
   product: Product;
@@ -8,16 +7,15 @@ type ProductEntryProps = {
 
 export default function ProductEntry({ product }: ProductEntryProps) {
   return (
-    <div>
+    <div className="p-4">
       <div className="w-full relative aspect-[1.5/2]">
         <Image
           src="https://placehold.co/150x200/png"
           alt="Placeholder image"
-          fill
-          quality={100}
           className="object-contain"
-          placeholder="blur"
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkAAIAAAoAAv/lxKUAAAAASUVORK5CYII="
+          quality={100}
+          fill
+          sizes="(max-width: 300px) 300px, (max-width: 1200px) 350px"
         />
       </div>
 
@@ -33,12 +31,14 @@ export default function ProductEntry({ product }: ProductEntryProps) {
             <ul className="flex gap-4">
               <li>
                 <button>
-                  <CartPlus width={24} height={24} />
+                  <span className="material-symbols-outlined">
+                    add_shopping_cart
+                  </span>
                 </button>
               </li>
               <li>
                 <button>
-                  <Heart width={24} height={24} />
+                  <span className="material-symbols-outlined">favorite</span>
                 </button>
               </li>
             </ul>

@@ -2,7 +2,7 @@ import { ListResponse } from "@/types/ListResponse";
 import { Product } from "@/types/Product";
 import ProductsSlider from "./ProductsSlider";
 
-async function fetchLatestProducts() {
+async function fetchPopular() {
   const response = await fetch("http://localhost:3000/api/products");
 
   if (!response.ok) {
@@ -12,12 +12,12 @@ async function fetchLatestProducts() {
   return response.json() as Promise<ListResponse<Product>>;
 }
 
-export default async function LatestProductsSlider() {
-  const { data } = await fetchLatestProducts();
+export default async function PopularProductsSlider() {
+  const { data } = await fetchPopular();
 
   return (
     <div>
-      <ProductsSlider title="Latest Products" products={data} />
+      <ProductsSlider title="Popular Products" products={data} />
     </div>
   );
 }

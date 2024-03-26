@@ -1,6 +1,3 @@
-import { FacebookTag, X, Instagram } from "iconoir-react";
-import Link from "next/link";
-
 export default function ContactUs() {
   return (
     <div className="flex flex-col gap-1.5 font-light">
@@ -10,7 +7,7 @@ export default function ContactUs() {
       <p>+1 (212)456-7890</p>
 
       <div className="flex items-center gap-2">
-        <Link href="https://www.instagram.com/" target="_blank">
+        {/* <Link href="https://www.instagram.com/" target="_blank">
           <Instagram width={24} height={24} />
         </Link>
         <Link href="https://www.facebook.com/" target="_blank">
@@ -18,7 +15,7 @@ export default function ContactUs() {
         </Link>
         <Link href="https://www.x.com/" target="_blank">
           <X width={24} height={24} />
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
