@@ -7,7 +7,10 @@ type HeaderProps = HTMLAttributes<HTMLDivElement>;
 
 export default function Header({ className, ...rest }: HeaderProps) {
   return (
-    <header className={cn("border-b py-6", className)} {...rest}>
+    <header
+      className={cn("border-b py-6 fixed w-full z-10 bg-white", className)}
+      {...rest}
+    >
       <Container className="flex items-center justify-between gap-4">
         <h1 className="text-2xl font-medium">Molly&apos;s Flower Shop</h1>
         <Navigation />
