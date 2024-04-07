@@ -9,7 +9,7 @@ type FooterProps = HTMLAttributes<HTMLDivElement>;
 
 export default function Footer({ className, ...rest }: FooterProps) {
   return (
-    <footer className={cn("border-t py-6", className)} {...rest}>
+    <footer className={cn("border-t py-6 px-4", className)} {...rest}>
       <Container className=" grid grid-cols-3">
         <div className="flex flex-col justify-between items-start h-full">
           <Image

@@ -11,7 +11,7 @@ export default function Home() {
         src="https://placehold.co/1200x450/png"
         alt="Banner"
       />
-      <Container className="my-6">
+      <Container className="my-6 px-4">
         <LatestProductsSlider />
       </Container>
 
@@ -21,9 +21,9 @@ export default function Home() {
         alt="Banner"
       />
 
-      {/* <Container className="my-6">
+      <Container className="my-6 px-4">
         <PopularProductsSlider />
-      </Container> */}
+      </Container>
     </div>
   );
 }

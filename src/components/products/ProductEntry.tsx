@@ -8,7 +8,7 @@ type ProductEntryProps = {
 export default function ProductEntry({ product }: ProductEntryProps) {
   return (
     <div>
-      <div className="w-full max-w-full relative aspect-[1.5/2]">
+      <figure className="w-full max-w-full relative aspect-[1.5/2]">
         <Image
           src="https://placehold.co/150x200/png"
           alt="Placeholder image"
@@ -17,7 +17,7 @@ export default function ProductEntry({ product }: ProductEntryProps) {
           fill
           sizes="(max-width: 300px) 300px, (max-width: 1200px) 350px"
         />
-      </div>
+      </figure>
 
       <div className="flex flex-col gap-2 p-2">
         <h2>{product.name}</h2>

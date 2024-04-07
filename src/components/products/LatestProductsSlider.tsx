@@ -1,9 +1,10 @@
 import { ListResponse } from "@/types/ListResponse";
 import { Product } from "@/types/Product";
-import ProductsSlider from "./ProductsSlider";
+import { Carousel, EmblaSlide } from "@/components/embla";
+import ProductEntry from "@/components/products/ProductEntry";
 
 async function fetchLatestProducts() {
-  const response = await fetch("http://localhost:3000/api/products/latest");
+  const response = await fetch("http://localhost:3000/api/products");
 
   if (!response.ok) {
     throw new Error("Failed to fetch products");
@@ -17,7 +18,13 @@ export default async function LatestProductsSlider() {
 
   return (
     <div>
-      <ProductsSlider title="Latest Products" products={data} />
+      <Carousel title="Latest Products" controls={false}>
+        {data.map((product) => (
+          <EmblaSlide key={product.id}>
+            <ProductEntry product={product} />
+          </EmblaSlide>
+        ))}
+      </Carousel>
     </div>
   );
 }
