@@ -1,7 +1,12 @@
-"use client";
 import { Product } from "@/types/Product";
 import ProductEntry from "./ProductEntry";
-import SliderWrapper from "../SliderWrapper";
+import { EmblaCarousel, EmblaSlide } from "@/components/embla";
+import { EmblaOptionsType } from "embla-carousel";
+
+const emblaOptions: EmblaOptionsType = {
+  align: "center",
+  loop: true,
+};
 
 type ProductsSliderProps = {
   products: Product[];
@@ -13,14 +18,16 @@ export default function ProductsSlider({
   title,
 }: ProductsSliderProps) {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 max-w-full px-4">
       {title && <h1 className="text-xl">{title}</h1>}
 
-      <SliderWrapper>
+      <EmblaCarousel options={emblaOptions}>
         {products.map((product) => (
-          <ProductEntry key={product.id} product={product} />
+          <EmblaSlide key={product.id}>
+            <ProductEntry key={product.id} product={product} />
+          </EmblaSlide>
         ))}
-      </SliderWrapper>
+      </EmblaCarousel>
     </div>
   );
 }

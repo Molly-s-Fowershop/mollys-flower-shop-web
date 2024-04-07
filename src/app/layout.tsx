@@ -1,4 +1,4 @@
-import "./globals.css";
+import "@/assets/css/index.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Header from "@/components/Header";
