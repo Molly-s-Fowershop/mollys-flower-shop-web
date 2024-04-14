@@ -18,7 +18,7 @@ export default async function LatestProductsSlider() {
 
   return (
     <div>
-      <Carousel title="Latest Products" controls={false}>
+      <Carousel title="Latest Products" controls={true}>
         {data.map((product) => (
           <EmblaSlide key={product.id}>
             <ProductEntry product={product} />

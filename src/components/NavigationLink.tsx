@@ -22,7 +22,7 @@ export default function NavigationLink({
       <Link
         href={href}
         className={cn(
-          "px-2 py-1 border border-transparent rounded-md text-sm transition-colors duration-300",
+          "px-2 py-1 border border-transparent rounded-md text-sm transition-colors duration-300 inline-flex",
           activeClass,
           linkClassName
         )}

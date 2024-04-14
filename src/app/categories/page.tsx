@@ -4,12 +4,12 @@ import Container from "@/components/Container";
 
 export default function CategotiesPage() {
   return (
-    <div className="px-4 py-6">
-      <Container className="flex flex-col gap-4">
+    <Container className="px-4 py-6">
+      <div className="flex flex-col gap-4">
         <PopularCategoriesSlider />
 
         <CategoryList />
-      </Container>
-    </div>
+      </div>
+    </Container>
   );
 }

@@ -1,6 +1,7 @@
 import { Category, ListResponse } from "@/types";
 import { Carousel, EmblaSlide } from "@/components/embla";
 import CategroySlideEntry from "./CategorySlideEntry";
+import Link from "next/link";
 
 async function fetchPopularCategories() {
   const response = await fetch("http://localhost:3000/api/categories");
@@ -20,7 +21,9 @@ export default async function PopularCategoriesSlider() {
       <Carousel title="Popular Categories" controls={false}>
         {data.map((category) => (
           <EmblaSlide key={category.id}>
-            <CategroySlideEntry category={category} />
+            <Link href={`/categories/${category.id}`}>
+              <CategroySlideEntry category={category} />
+            </Link>
           </EmblaSlide>
         ))}
       </Carousel>

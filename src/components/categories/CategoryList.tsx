@@ -1,5 +1,6 @@
 import { Category, ListResponse } from "@/types";
 import CategoryEntry from "./CategoryEntry";
+import Link from "next/link";
 
 async function fetchCategories() {
   const response = await fetch("http://localhost:3000/api/categories");
@@ -20,7 +21,9 @@ export default async function CategoryList() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {data.map((category) => (
-          <CategoryEntry key={category.id} category={category} />
+          <Link href={`/categories/${category.id}`} key={category.id}>
+            <CategoryEntry category={category} />
+          </Link>
         ))}
       </div>
     </div>

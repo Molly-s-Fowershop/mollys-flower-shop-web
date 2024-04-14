@@ -1,5 +1,6 @@
 import { Category } from "@/types";
 import Image from "next/image";
+import InfoTooltip from "../InfoTooltip";
 
 type CategoryEntryProps = {
   category: Category;
@@ -8,9 +9,9 @@ type CategoryEntryProps = {
 export default function CategoryEntry({ category }: CategoryEntryProps) {
   return (
     <div className="flex flex-col gap-3">
-      <figure className="w-full max-w-full relative aspect-[2/1.5]">
+      <figure className="w-full max-w-full relative aspect-[2/1.25]">
         <Image
-          src="https://placehold.co/200x150/png"
+          src="https://placehold.co/200x125/png"
           alt="Category image"
           className="object-contain"
           fill
@@ -22,11 +23,12 @@ export default function CategoryEntry({ category }: CategoryEntryProps) {
       <section>
         <hr />
         <div className="flex items-center justify-between gap-4 mt-1">
-          <h2 className="">{category.name}</h2>
+          <h2 className="text-sm">{category.name}</h2>
 
-          <span className="material-symbols-outlined text-gray-600 hover:cursor-default">
-            info
-          </span>
+          <InfoTooltip
+            description={category.description}
+            className="text-[20px]"
+          />
         </div>
       </section>
     </div>
