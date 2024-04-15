@@ -5,7 +5,7 @@ export default function Navigation() {
     <nav>
       <ul className="flex items-center gap-3">
         <NavigationLink href="/">Home</NavigationLink>
-        <NavigationLink href="/featured">Featured</NavigationLink>
+        {/* <NavigationLink href="/featured">Featured</NavigationLink> */}
         <NavigationLink href="/categories">Categories</NavigationLink>
         <NavigationLink href="/profile" linkClassName="px-1">
           <span className="material-symbols-outlined">person</span>

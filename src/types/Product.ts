@@ -1,4 +1,5 @@
 import { Category } from "./Category";
+import { Media } from "./Media";
 
 export interface Product {
   id: number;
@@ -10,6 +11,7 @@ export interface Product {
   category: Category;
   productDetails: ProductDetails;
   productOffers: any[];
+  profileImage: Media;
 }
 
 export interface ProductDetails {

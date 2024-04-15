@@ -17,6 +17,7 @@ type UsePrevNextButtonsType = {
 
 export const usePrevNextButtons = (
   emblaApi: EmblaCarouselType | undefined,
+  // eslint-disable-next-line no-unused-vars
   onButtonClick?: (emblaApi: EmblaCarouselType) => void
 ): UsePrevNextButtonsType => {
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);

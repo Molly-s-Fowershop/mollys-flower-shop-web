@@ -4,7 +4,7 @@
   margin: auto;
   --slide-height: 19rem;
   --slide-spacing: 1rem;
-  --slide-size: 60%;
+  --slide-size: 70%;
 }
 .embla__viewport {
   overflow: hidden;
@@ -124,8 +124,8 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .embla__slide {
-    flex: 0 0 25%;
+    flex: 0 0 20%;
   }
 }

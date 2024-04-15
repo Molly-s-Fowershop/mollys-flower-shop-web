@@ -4,7 +4,7 @@ import { EmblaCarousel, EmblaSlide } from "@/components/embla";
 import { EmblaOptionsType } from "embla-carousel";
 
 const emblaOptions: EmblaOptionsType = {
-  align: "center",
+  align: "start",
   loop: true,
 };
 

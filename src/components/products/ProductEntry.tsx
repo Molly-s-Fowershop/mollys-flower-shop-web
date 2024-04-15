@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Product } from "@/types/Product";
+import Link from "next/link";
 
 type ProductEntryProps = {
   product: Product;
@@ -8,19 +9,23 @@ type ProductEntryProps = {
 export default function ProductEntry({ product }: ProductEntryProps) {
   return (
     <div>
-      <figure className="w-full max-w-full relative aspect-[1.5/2]">
-        <Image
-          src="https://placehold.co/150x200/png"
-          alt="Placeholder image"
-          className="object-contain"
-          quality={100}
-          fill
-          sizes="(max-width: 300px) 300px, (max-width: 1200px) 350px"
-        />
-      </figure>
+      <Link href={`/products/${product.id}`}>
+        <figure className="w-full max-w-full relative aspect-[1.5/2]">
+          <Image
+            src={product.profileImage.url}
+            alt="Placeholder image"
+            className="object-cover"
+            quality={100}
+            fill
+            sizes="(max-width: 300px) 300px, (max-width: 1200px) 350px"
+          />
+        </figure>
+      </Link>
 
       <div className="flex flex-col gap-2 p-2">
-        <h2>{product.name}</h2>
+        <Link href={`/products/${product.id}`}>
+          <h2>{product.name}</h2>
+        </Link>
 
         <hr className="border-gray-500" />
 
