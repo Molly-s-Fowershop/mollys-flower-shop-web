@@ -21,7 +21,7 @@ export default async function CategoryList() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {data.map((category) => (
-          <Link href={`/categories/${category.id}`} key={category.id}>
+          <Link href={`/categories/${category.id}/products`} key={category.id}>
             <CategoryEntry category={category} />
           </Link>
         ))}

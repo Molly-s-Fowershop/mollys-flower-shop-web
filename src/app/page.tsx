@@ -12,7 +12,7 @@ export default function Home() {
         src="https://images.pexels.com/photos/5976825/pexels-photo-5976825.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt="Banner"
       />
-      <Container className="my-6 px-4">
+      <Container className="my-6">
         <LatestProductsSlider />
       </Container>
 
@@ -22,7 +22,7 @@ export default function Home() {
         alt="Banner"
       />
 
-      <Container className="my-6 px-4">
+      <Container className="my-6">
         <PopularProductsSlider />
       </Container>
     </div>

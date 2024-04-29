@@ -9,9 +9,10 @@ export interface Product {
   updatedAt: string;
   createdAt: string;
   category: Category;
-  productDetails: ProductDetails;
-  productOffers: any[];
+  productDetails?: ProductDetails;
+  productOffers?: any[];
   profileImage: Media;
+  medias?: Media[];
 }
 
 export interface ProductDetails {

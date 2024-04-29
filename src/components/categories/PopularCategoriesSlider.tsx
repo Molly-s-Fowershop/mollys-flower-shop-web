@@ -21,7 +21,7 @@ export default async function PopularCategoriesSlider() {
       <Carousel title="Popular Categories" controls={false}>
         {data.map((category) => (
           <EmblaSlide key={category.id}>
-            <Link href={`/categories/${category.id}`}>
+            <Link href={`/categories/${category.id}/products`}>
               <CategroySlideEntry category={category} />
             </Link>
           </EmblaSlide>

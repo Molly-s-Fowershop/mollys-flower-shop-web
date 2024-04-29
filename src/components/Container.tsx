@@ -10,6 +10,8 @@ export default function Container({
   className = "",
 }: ContainerProps) {
   return (
-    <div className={cn("container w-full mx-auto", className)}>{children}</div>
+    <div className={cn("container w-full mx-auto px-4", className)}>
+      {children}
+    </div>
   );
 }

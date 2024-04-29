@@ -26,8 +26,9 @@ export default function CategoryEntry({ category }: CategoryEntryProps) {
           <h2 className="text-sm">{category.name}</h2>
 
           <InfoTooltip
+            tooltipId={`category-${category.id}`}
             description={category.description}
-            className="text-[20px]"
+            className="text-[20px] max-w-20"
           />
         </div>
       </section>
