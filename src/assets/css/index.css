@@ -31,3 +31,20 @@ body {
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
+
+/* Forms */
+.input {
+  @apply px-2 py-1 border border-gray-300;
+}
+
+.submit {
+  @apply px-2 py-1 border-2 text-gray-600 border-gray-300 hover:border-black hover:bg-gray-100 hover:text-black transition-colors duration-300;
+}
+
+.auth-form {
+  @apply flex flex-col gap-4 max-w-xl mx-auto p-10 border shadow-md my-14 mb-20;
+}
+
+.inline-anchor {
+  @apply text-gray-700 underline underline-offset-4 hover:text-black;
+}
