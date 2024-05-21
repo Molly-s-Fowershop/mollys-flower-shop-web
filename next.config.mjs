@@ -12,6 +12,17 @@ const nextConfig = {
       },
     ],
   },
+  headers: () => [
+    {
+      source: "/cart",
+      headers: [
+        {
+          key: "Cache-Control",
+          value: "no-cache",
+        },
+      ],
+    },
+  ],
 };
 
 export default nextConfig;

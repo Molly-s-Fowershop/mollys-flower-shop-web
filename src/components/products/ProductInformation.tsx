@@ -1,8 +1,12 @@
+"use client";
+
 import { Product } from "@/types";
 import { HTMLAttributes } from "react";
 import Button from "../common/Button";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
+import { addItemToCart } from "@/lib/services/cart.services";
+import { toast } from "sonner";
 
 type ProductInformationProps = HTMLAttributes<HTMLDivElement> & {
   product: Product;
@@ -12,6 +16,18 @@ export default function ProductInformation({
   product,
   ...rest
 }: ProductInformationProps) {
+  async function handleAddToCart() {
+    const result = await addItemToCart({ productId: product.id, quantity: 1 });
+
+    if (result?.error) {
+      toast.error("Failed to add item to cart.");
+    }
+
+    if (result?.ok) {
+      toast.success("Item added to cart!");
+    }
+  }
+
   return (
     <div {...rest} className={cn("flex flex-col gap-6", rest.className)}>
       <section className="flex flex-col gap-4 ">
@@ -42,7 +58,10 @@ export default function ProductInformation({
           <Button className="w-full border-gray-500 bg-gray-700 hover:bg-gray-900 text-white text-lg">
             Add to wishlist
           </Button>
-          <Button className="w-full hover:bg-gray-200 text-lg">
+          <Button
+            className="w-full hover:bg-gray-200 text-lg"
+            onClick={handleAddToCart}
+          >
             Add to cart
           </Button>
         </div>

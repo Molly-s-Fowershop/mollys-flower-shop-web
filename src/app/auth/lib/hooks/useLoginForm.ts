@@ -7,16 +7,16 @@ const initialState = {
   password: "",
 };
 
-const loginSchema = z.object({
+export const LoginSchema = z.object({
   email: z.string().email(),
   password: z.string().min(8).max(100),
 });
 
-export type LoginForm = z.infer<typeof loginSchema>;
+export type LoginForm = z.infer<typeof LoginSchema>;
 
 export const useLoginForm = () => {
   const loginForm = useForm<LoginForm>({
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(LoginSchema),
     defaultValues: initialState,
   });
 

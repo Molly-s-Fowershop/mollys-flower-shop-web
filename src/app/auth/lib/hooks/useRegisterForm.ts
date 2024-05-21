@@ -7,7 +7,7 @@ const initialState = {
   password: "",
 };
 
-const registerSchema = z.object({
+export const RegisterSchema = z.object({
   email: z.string().email(),
   name: z.string().min(3).max(40),
   lastname: z.string().min(3).max(40),
@@ -15,11 +15,11 @@ const registerSchema = z.object({
   password: z.string().min(8).max(100),
 });
 
-export type RegisterForm = z.infer<typeof registerSchema>;
+export type RegisterForm = z.infer<typeof RegisterSchema>;
 
 export const useRegisterForm = () => {
   const registerForm = useForm<RegisterForm>({
-    resolver: zodResolver(registerSchema),
+    resolver: zodResolver(RegisterSchema),
     defaultValues: initialState,
   });
 

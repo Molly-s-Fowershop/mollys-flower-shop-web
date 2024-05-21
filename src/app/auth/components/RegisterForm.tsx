@@ -1,22 +1,39 @@
 "use client";
 
 import Link from "next/link";
-import { useRegisterForm } from "../lib/hooks/useRegisterForm";
+import {
+  RegisterForm as RegisterFormType,
+  useRegisterForm,
+} from "../lib/hooks/useRegisterForm";
 import LabelWrapper from "@/components/form/LabelWrapper";
+import { register as userRegister } from "@/lib/services/auth.services";
+import { SubmitHandler } from "react-hook-form";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 export default function RegisterForm() {
   const {
     register,
-    handleSubmit,
     formState: { errors },
+    handleSubmit,
   } = useRegisterForm();
+  const router = useRouter();
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
-  });
+  const onSubmit: SubmitHandler<RegisterFormType> = async (payload) => {
+    const { data, ok } = await userRegister(payload);
+
+    if (!ok) {
+      const { message } = data;
+      return toast.error(message);
+    }
+
+    toast.success("You have successfully registered!");
+
+    router.push("/");
+  };
 
   return (
-    <form onSubmit={onSubmit} className="auth-form">
+    <form onSubmit={handleSubmit(onSubmit)} className="auth-form">
       <h1 className="text-center text-3xl font-medium">
         Create your new account
       </h1>

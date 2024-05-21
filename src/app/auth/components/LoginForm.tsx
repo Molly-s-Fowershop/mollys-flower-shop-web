@@ -1,14 +1,27 @@
 "use client";
 
+import { toast } from "sonner";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useLoginForm } from "@/app/auth/lib/hooks/useLoginForm";
 import LabelWrapper from "@/components/form/LabelWrapper";
-import Link from "next/link";
+import { login } from "@/lib/services/auth.services";
 
 export default function LoginForm() {
   const { register, handleSubmit, formState } = useLoginForm();
+  const router = useRouter();
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
+  const onSubmit = handleSubmit(async (payload) => {
+    const { data, ok } = await login(payload);
+
+    if (!ok) {
+      const { message } = data;
+      return toast.error(message);
+    }
+
+    toast.success("You have successfully registered!");
+
+    router.push("/");
   });
 
   return (

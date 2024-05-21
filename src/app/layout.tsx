@@ -5,6 +5,7 @@ import "react-photo-view/dist/react-photo-view.css";
 import Header from "@/components/Header";
 import { Metadata } from "next";
 import Footer from "@/components/Footer";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Molly's Flower Shop",
@@ -27,6 +28,8 @@ export default function RootLayout({
         </main>
 
         <Footer />
+
+        <Toaster richColors />
       </body>
     </html>
   );
